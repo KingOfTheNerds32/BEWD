@@ -1,16 +1,16 @@
 class AnswersController < ApplicationController
   def show
-    game_table = []
+    # game_table = []
 
-    Question.all.shuffle.each do |q|
-      if game_table.keys.count < 2 && game_table[q.category].nil?
-        game_table[q.category] = [q]
-      elsif game_table[q.category].count > 0
-        game_table[q.category] << q
-      end
-    end
+    # Question.all.shuffle.each do |q|
+    #   if game_table.keys.count < 2 && game_table[q.category].nil?
+    #     game_table[q.category] = [q]
+    #   elsif game_table[q.category].count > 0
+    #     game_table[q.category] << q
+    #   end
+    # end
 
-    puts game_table
+    # puts game_table
     @answer = Question.all.sample
   end
   def result
