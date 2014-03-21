@@ -1,0 +1,7 @@
+<h1>People that need roof help:</h1>
+
+<ul>
+	<% @contacts.each do |contact| %>
+		<li><%= contact.phone %></li>
+	<% end %>
+</ul>

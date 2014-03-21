@@ -1,0 +1,23 @@
+<p>Welcome to Rock, Paper, Scissors!</p>
+
+<p>You currently have <strong><%= @points %></strong> points.</p>
+
+<form>
+	<input type='text' name='bet' placeholder='# of points to bet' />
+	<input type='hidden' name='username' value='<%= @username %>' />
+	<input type='submit' />
+</form>
+
+<p><strong>Pick your weapon:</strong></p>
+
+<ul>
+	<li>
+		<a href="play_rps?weapon=rock&bet=<%= @bet %>&username=<%= @username %>">Rock</a>
+	</li>
+	<li>
+		<a href="play_rps?weapon=paper&bet=<%= @bet %>&username=<%= @username %>">Paper</a>
+	</li>
+	<li>
+		<a href="play_rps?weapon=scissors&bet=<%= @bet %>&username=<%= @username %>">Scissors</a>
+	</li>
+</ul>

@@ -1,0 +1,9 @@
+<% if @current_contestant %>
+	<h1>Welcome our contestants!</h1>
+
+	<ul>
+		<% @contestants.each do |contestant| %>
+			<li><%= contestant.name %></li>
+		<% end %> 
+	</ul>
+<% end %>

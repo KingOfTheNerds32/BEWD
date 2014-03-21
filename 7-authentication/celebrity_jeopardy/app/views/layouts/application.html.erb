@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<head>
+
+  <title>CelebrityJeopardy</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div><%= flash[:info] %></div>
+
+<% if @current_contestant %>
+	<div>Logged in as: <%= @current_contestant.name %></div>
+	<a href='/logout'>Logout</a>
+<% else %>
+	<a href='/login'>Login</a>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

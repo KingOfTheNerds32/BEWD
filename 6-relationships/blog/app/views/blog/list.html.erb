@@ -1,0 +1,63 @@
+<div class='header'>
+	<h1 class='mainheader'>My Rails Blog</h1>
+</div>
+
+<div>
+	<form action='/blog' name="FilterControl">
+		Filter the articles:<br>
+		<select name="category_filter">
+			<option value="All">All Categories</option>
+			<% @categories.each do |category| %>
+				<% if category != nil %>
+					<% if category == @category_filter %>
+						<option value=<%= category %> selected><%= category %></option>
+					<% else %>
+						<option value=<%= category %> ><%= category %></option>
+					<% end %>
+				<% end %>
+			<% end %> 
+		</select>
+		<select name="author_filter">
+			<option value="All">All Authors</option>
+			<% @authors.each do |author| %>
+				<% if author == nil || author == "" %>
+					<% author = "Anonymous" %>
+				<% end %>
+				<% if author != nil %>
+					<% if author == @author_filter %>
+						<option value=<%= author %> selected><%= author %></option>
+					<% else %>
+						<option value=<%= author %> ><%= author %></option>
+					<%end%>
+				<% end %>
+			<% end %> 
+		</select>
+	</form>
+
+<!--  	<%= form_tag("/blog", method:"get") do %>
+		<%= select_tag(:author_filter, options_for_select(@authors), :onchange => "this.form.submit();") %>
+		<%= select_tag(:category_filter, options_for_select(@categories), :onchange => "this.form.submit();") %>
+	<% end %>
+ -->
+
+	<h2>Articles</h2>
+	<% if @blogs.count == 0 %>
+		<p>I'm sorry, but no articles meet your criteria</p>
+	<% else %>
+		<ul>
+			<% @blogs.each do |post| %>
+				<% link = 'blog/post?postid=' + post.id.to_s %>
+				<a href=<%= link %>><li><%= post.title %></li></a>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<a href='/blog/new'><button>Create a new post</button></a>
+</div>
+
+
+<script>
+	$("select").change(function() {
+		$("form").trigger("submit");
+	});
+</script>

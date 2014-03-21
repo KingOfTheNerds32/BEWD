@@ -1,0 +1,7 @@
+<h1><%= @answer.answer %></h1>
+
+<form action="/result" method="get">
+  <input type="text" name="question" placeholder="QUESTION GOES HERE" />
+  <input type="hidden" name="answer" value='<%= @answer.answer %>'/>
+  <input type="submit" />
+</form>

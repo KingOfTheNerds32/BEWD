@@ -1,0 +1,17 @@
+
+<% if @current_contestant %>
+	<h1>Here's a list of the answers and their questions</h1>
+
+	<table>
+		<tr>
+			<td class="title" class="left"><h4>Answers</h4></td>
+			<td class="title"><h4>Questions</h4></td>
+		</tr>
+		<% @questions.each do |question| %>
+		<tr class="question">
+			<td class="left_col"><%= question.answer %></td>
+			<td class="right_col"><%= question.question %></td>
+		</tr>
+		<% end %>
+	</table>
+<% end %>

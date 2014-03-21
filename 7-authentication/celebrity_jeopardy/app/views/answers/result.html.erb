@@ -1,0 +1,11 @@
+<h1>Result</h1>
+
+<h3>You said: <%= @contestant_question %></h3>
+<%= @result %>
+
+<% if @score == false %>
+  The correct answer is: <%= @true_question.question %>
+<% end %>
+
+<h4>Your score: <%= @total_score %></h4>
+<div><a href="/answers">Play Again</a></div>

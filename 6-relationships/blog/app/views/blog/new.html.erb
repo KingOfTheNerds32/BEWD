@@ -1,0 +1,17 @@
+<div>
+	<h2>Write a new blog post</h2>
+
+	<form action="/blog/create" method='post'>
+		<input type="text" name="title" placeholder="Enter a title" required /><br>
+		<input type="text" name="author" placeholder="Who wrote it?" />
+		<br>
+		<select name="category" class="required" required>
+			<option value="" disabled="disabled">Please select a category</option>
+			<option value="Interesting">Interesting</option>
+			<option value="Not Interesting">Not Interesting</option>
+		</select>
+		<br>
+		<textarea rows="15" cols="150" name="body" placeholder="Craft your post here" required></textarea><br>
+		<input type="submit" value="Create New Blog Post" />
+	</form>
+</div>

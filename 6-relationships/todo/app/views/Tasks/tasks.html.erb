@@ -1,0 +1,16 @@
+<h1>Your tasks:</h1>
+
+<ul>
+	<% @tasks.each do |task| %>
+		<ul><%= task.description %></ul>
+	<% end %>
+</ul>
+
+<a href="/tasks/new">New Task</a>
+
+
+<!-- <br><br>
+<form action="/tasks/create">
+	<input type="text" name="description" placeholder="Enter a task here..." />
+	<input type="submit" value="Make new task"/>
+</form> -->
