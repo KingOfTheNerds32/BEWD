@@ -5,40 +5,44 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
+      <div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#">Some Store</a>
-        <div class="nav-collapse">
-          <ul class="nav">
-            <li><%= link_to "Browse Products", products_path %></li>
-            <li><%= link_to "Price List" %></li>
-            <li><%= link_to "Contact Us" %></li>
-            <li><%= link_to "Cart" %></li>
-          </ul>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/products">Sheen's Shoes</a>
         </div>
+
+          <ul class="nav navbar-nav">
+            <li><a href="/products">Price List</a></li>
+            <li class="active"><a href="#">Contact Us</a></li>
+            <li><a href="#">Delivery Status</a></li>
+          </ul>
+
       </div>
     </div>
-  </div>
-
   <div class="container">
-    <div class="row">
-      <div class="span9"><%= yield %></div>
-      <div class="span3">
-        <h2>About Us</h2>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
+    <div class="col-md-8">
+      <%= yield %>
+    </div>
+    <div class="col-md-4">
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis lacus ut est blandit blandit. Sed volutpat turpis non ultrices vehicula. Aliquam convallis nec odio eget pharetra. Sed et dui non arcu aliquet blandit et at ligula. Maecenas sapien turpis, fermentum id dui sed, viverra dapibus enim. Maecenas ac mauris iaculis, malesuada dolor convallis, lobortis nisl. Mauris scelerisque in quam at fermentum. Nulla aliquam odio vitae tincidunt pulvinar. Aenean a justo id dui feugiat tincidunt nec sed ligula. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam vulputate turpis quis sagittis pellentesque. Pellentesque tristique hendrerit mauris, ut ultrices lacus lobortis non. Fusce vel nisl at erat tempor commodo vel sed mauris. Ut et tincidunt sem. In nec auctor felis.</p>
+      <img src="http://placesheen.com/200/300" />
     </div>
   </div>
 </body>
